@@ -20,13 +20,6 @@ define( 'REMUNE_ASSET_MANIFEST', REMUNE_WIDGET_PATH . '/build/asset-manifest.jso
 define( 'REMUNE_INCLUDES', plugin_dir_path( __FILE__ ) . '/includes' );
 require_once( REMUNE_INCLUDES . '/enqueue.php' );
 
-
-// add_shortcode( 'remune', 'remune_connect_func' );
-//
-// function remune_connect_func( $atts ) {
-//     return '<div id="remune-wrapper"></div>';
-// }
-
 add_action('wp_footer', 'remune_connect_func');
 function remune_connect_func() {
     echo '<div id="remune-wrapper"></div>';
