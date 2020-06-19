@@ -1,0 +1,6 @@
+widget/node_modules
+widget/package.json
+widget/public
+widget/src
+widget/yarn-error.log
+widget/yarn.lock
