@@ -42,28 +42,30 @@ function remune_plugin_settings() {
 
 function remune_init(){
   ?>
-  <div class="wrap">
+  <div class="remune-wrapper">
   <h1>Remune Settings</h1>
 
-  <form method="post" action="options.php">
+  <form method="post" action="options.php" class="remune-option-form">
   <?php settings_fields( 'remune-settings-group' ); ?>
   <?php do_settings_sections( 'remune-settings-group' ); ?>
   <table class="form-table">
     <tr valign="top">
-    <th scope="row">Remune Baseurl</th>
-    <td><input type="text" name="remune_path" value="<?php echo esc_attr( get_option('remune_path') ); ?>" /></td>
+    <th scope="row" class="label" style="width:20%">Remune Baseurl</th>
+    <td><input type="text" class="text-field" name="remune_path" value="<?php echo esc_attr( get_option('remune_path') ); ?>" /></td>
+		<td rowspan="4" style="width:50%">
+			<div class="plugin-img"><img src="<?php echo plugins_url('/images/remune-logo.svg', __FILE__); ?>"/><div></td>
+		</tr>
+		<tr valign="top">
+    <th scope="row" class="label">Your Remune ID</th>
+    <td><input type="text" class="text-field" name="remune_id" value="<?php echo esc_attr( get_option('remune_id') ); ?>" /></td>
     </tr>
 		<tr valign="top">
-    <th scope="row">Your Remune ID</th>
-    <td><input type="text" name="remune_id" value="<?php echo esc_attr( get_option('remune_id') ); ?>" /></td>
+    <th scope="row" class="label">API Key</th>
+    <td><input type="text" class="text-field" name="remune_api" value="<?php echo esc_attr( get_option('remune_api') ); ?>" /></td>
     </tr>
 		<tr valign="top">
-    <th scope="row">API Key</th>
-    <td><input type="text" name="remune_api" value="<?php echo esc_attr( get_option('remune_api') ); ?>" /></td>
-    </tr>
-		<tr valign="top">
-    <th scope="row">Secret Key</th>
-    <td><input type="text" name="remune_secret" value="<?php echo esc_attr( get_option('remune_secret') ); ?>" /></td>
+    <th scope="row" class="label">Secret Key</th>
+    <td><input type="text" class="text-field" name="remune_secret" value="<?php echo esc_attr( get_option('remune_secret') ); ?>" /></td>
     </tr>
   </table>
 
@@ -72,4 +74,14 @@ function remune_init(){
   </form>
   </div>
   <?php
+}
+
+add_action('init', 'remune_register_style');
+function remune_register_style() {
+    wp_register_style( 'remune_style', plugins_url('/css/remune.css', __FILE__), false, '1.0.0', 'all');
+}
+
+add_action('admin_enqueue_scripts', 'remune_enqueue_style');
+function remune_enqueue_style(){
+   wp_enqueue_style( 'remune_style' );
 }

@@ -1,0 +1,22 @@
+.remune-option-form{
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #010101;
+  margin-right: 20px;
+}
+.remune-option-form .label{
+  text-transform: uppercase;
+}
+.remune-option-form .text-field{
+  width: 100%;
+  padding: 5px;
+}
+.plugin-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.plugin-img img{
+  width: 200px;
+}
