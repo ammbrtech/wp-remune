@@ -36,6 +36,8 @@ function remune_setup_menu(){
 function remune_plugin_settings() {
 	register_setting( 'remune-settings-group', 'remune_path' );
 	register_setting( 'remune-settings-group', 'remune_id' );
+	register_setting( 'remune-settings-group', 'remune_api' );
+	register_setting( 'remune-settings-group', 'remune_secret' );
 }
 
 function remune_init(){
@@ -54,6 +56,14 @@ function remune_init(){
 		<tr valign="top">
     <th scope="row">Your Remune ID</th>
     <td><input type="text" name="remune_id" value="<?php echo esc_attr( get_option('remune_id') ); ?>" /></td>
+    </tr>
+		<tr valign="top">
+    <th scope="row">API Key</th>
+    <td><input type="text" name="remune_api" value="<?php echo esc_attr( get_option('remune_api') ); ?>" /></td>
+    </tr>
+		<tr valign="top">
+    <th scope="row">Secret Key</th>
+    <td><input type="text" name="remune_secret" value="<?php echo esc_attr( get_option('remune_secret') ); ?>" /></td>
     </tr>
   </table>
 
