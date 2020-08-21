@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/wp-content/plugins/remune/widget/build/precache-manifest.7697afa2e26dc180bc7543e1b383b140.js"
+  "/wp-content/plugins/remune/widget/build/precache-manifest.787bcfd536f4e6aa2a571d0066a31c22.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -47,7 +47,7 @@ function remune_load_scripts()
         'remune-script',
         'remune_script_vars',
         array(
-            'basepath' => esc_attr(get_option('remune_path')),
+            'basepath' => "https://api.remune.io",
             'remune_id' => esc_attr(get_option('remune_id')),
             'base_url' => get_bloginfo('wpurl'),
             'secret' => esc_attr(get_option('remune_secret'))

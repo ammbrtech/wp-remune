@@ -53,15 +53,11 @@ function remune_init()
   <?php do_settings_sections('remune-settings-group'); ?>
   <table class="form-table">
     <tr valign="top">
-    <th scope="row" class="label" style="width:20%">Remune API URL</th>
-    <td><input type="text" class="text-field" name="remune_path" value="<?php echo esc_attr(get_option('remune_path')); ?>" /></td>
+      <th scope="row" class="label">Your Remune Handle</th>
+      <td><input type="text" class="text-field" name="remune_id" value="<?php echo esc_attr(get_option('remune_id')); ?>" /></td>
 		<td rowspan="4" style="width:50%">
 			<div class="plugin-img"><img src="<?php echo plugins_url('/images/remune-logo.svg', __FILE__); ?>"/><div></td>
 		</tr>
-		<tr valign="top">
-    <th scope="row" class="label">Your Remune Handle</th>
-    <td><input type="text" class="text-field" name="remune_id" value="<?php echo esc_attr(get_option('remune_id')); ?>" /></td>
-    </tr>
 		<tr valign="top">
     <th scope="row" class="label">Access Token</th>
     <td><input type="text" class="text-field" name="remune_secret" value="<?php echo esc_attr(get_option('remune_secret')); ?>" /></td>
